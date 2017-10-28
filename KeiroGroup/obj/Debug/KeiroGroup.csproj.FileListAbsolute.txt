@@ -1,0 +1,7 @@
+C:\Users\tanaatu\Documents\Visual Studio 2017\Projects\KeiroGroup\KeiroGroup\bin\KeiroGroup.dll.config
+C:\Users\tanaatu\Documents\Visual Studio 2017\Projects\KeiroGroup\KeiroGroup\bin\KeiroGroup.dll
+C:\Users\tanaatu\Documents\Visual Studio 2017\Projects\KeiroGroup\KeiroGroup\bin\KeiroGroup.pdb
+C:\Users\tanaatu\Documents\Visual Studio 2017\Projects\KeiroGroup\KeiroGroup\obj\Debug\KeiroGroup.csproj.CoreCompileInputs.cache
+C:\Users\tanaatu\Documents\Visual Studio 2017\Projects\KeiroGroup\KeiroGroup\obj\Debug\KeiroGroup.dll
+C:\Users\tanaatu\Documents\Visual Studio 2017\Projects\KeiroGroup\KeiroGroup\obj\Debug\KeiroGroup.pdb
+C:\Users\tanaatu\Documents\Visual Studio 2017\Projects\KeiroGroup\KeiroGroup\obj\Debug\KeiroGroup.csprojResolveAssemblyReference.cache
