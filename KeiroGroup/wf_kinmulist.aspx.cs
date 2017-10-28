@@ -45,7 +45,6 @@ namespace KeiroGroup
             command.Connection = connection;
             command.CommandText = "select kinmulist_ja from [KeiroGroup].[dbo].[TM_KinmuListCategory]";
 
-
             // SQLの実行
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -230,7 +229,7 @@ namespace KeiroGroup
 
         }
 
-
+        //集計開始日
         private DateTime StartDate()
         {
             string year_no = tb_TargetYear.Text.ToString();
@@ -241,6 +240,7 @@ namespace KeiroGroup
             return tmp_dt;
         }
 
+        //集計終了日
         private DateTime EndDate()
         {
             string year_no = tb_TargetYear.Text.ToString();
