@@ -23,6 +23,13 @@
             <asp:Button ID="Cmd_updateYotei" runat="server" OnClick="Cmd_updateZisseki_Click" Text="勤務時間登録" />
             <br />
             <br />
+            <br />
+            勤務変更届出一欄<br />
+            <asp:GridView ID="Gv_todokedeinfo" runat="server">
+            </asp:GridView>
+            <br />
+            <br />
+            <br />
         </div>
     </form>
     <p>

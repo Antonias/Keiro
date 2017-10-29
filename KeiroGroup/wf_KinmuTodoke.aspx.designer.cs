@@ -56,5 +56,14 @@ namespace KeiroGroup.Kintai {
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Cmd_updateYotei;
+        
+        /// <summary>
+        /// Gv_todokedeinfo コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView Gv_todokedeinfo;
     }
 }
