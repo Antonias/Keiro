@@ -1,0 +1,10 @@
+C:\Users\tanaatu\Documents\Keiro\KeiroGroupTests\bin\Release\KeiroGroupTests.dll
+C:\Users\tanaatu\Documents\Keiro\KeiroGroupTests\bin\Release\KeiroGroupTests.pdb
+C:\Users\tanaatu\Documents\Keiro\KeiroGroupTests\bin\Release\KeiroGroup.dll
+C:\Users\tanaatu\Documents\Keiro\KeiroGroupTests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\tanaatu\Documents\Keiro\KeiroGroupTests\bin\Release\KeiroGroup.pdb
+C:\Users\tanaatu\Documents\Keiro\KeiroGroupTests\bin\Release\KeiroGroup.dll.config
+C:\Users\tanaatu\Documents\Keiro\KeiroGroupTests\obj\Release\KeiroGroupTests.csprojResolveAssemblyReference.cache
+C:\Users\tanaatu\Documents\Keiro\KeiroGroupTests\obj\Release\KeiroGroupTests.csproj.CoreCompileInputs.cache
+C:\Users\tanaatu\Documents\Keiro\KeiroGroupTests\obj\Release\KeiroGroupTests.dll
+C:\Users\tanaatu\Documents\Keiro\KeiroGroupTests\obj\Release\KeiroGroupTests.pdb
