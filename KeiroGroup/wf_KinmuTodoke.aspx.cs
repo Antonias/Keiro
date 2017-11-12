@@ -309,6 +309,7 @@ namespace KeiroGroup.Kintai
             {
                 TextBox tb_start_time;
                 TextBox tb_end_time;
+                int end_dt = EndDate().Day;
                 int day;
                 if (!string.IsNullOrEmpty(trc[row_no].Cells[1].Text.ToString()))
                 {
@@ -318,7 +319,7 @@ namespace KeiroGroup.Kintai
                     updateKinmuTodoke(day, tb_start_time.Text, tb_end_time.Text);
                 }
 
-                if (!string.IsNullOrEmpty(trc[row_no].Cells[7].Text.ToString()))
+                if (row_no + 15 <= end_dt && !string.IsNullOrEmpty(trc[row_no].Cells[7].Text.ToString()))
                 {
                     day = int.Parse(trc[row_no].Cells[7].Text.ToString());
                     tb_start_time = (TextBox)trc[row_no].Cells[9].Controls[0];
@@ -379,13 +380,21 @@ namespace KeiroGroup.Kintai
         protected void Cmd_checkAllYotei_Click(object sender, EventArgs e)
         {
             TableRowCollection trc = this.tbl_KinmuList.Rows;
+            int end_dt = EndDate().Day;
+            CheckBox cb;
             for (int i = 1; i <= 16; i++)
             {
-                CheckBox cb = (CheckBox)trc[i].Cells[0].Controls[0];
+                cb = (CheckBox)trc[i].Cells[0].Controls[0];
                 cb.Checked = true;
 
-                cb = (CheckBox)trc[i].Cells[6].Controls[0];
-                cb.Checked = true;
+
+                if (i + 15 <= end_dt)
+                {
+                    {
+                        cb = (CheckBox)trc[i].Cells[6].Controls[0];
+                        cb.Checked = true;
+                    }
+                }
             }
 
 

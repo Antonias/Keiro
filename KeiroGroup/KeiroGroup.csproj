@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="wf_HenkouTodoke.aspx" />
     <Content Include="wf_KinmuTodoke.aspx" />
     <Content Include="top.aspx" />
     <Content Include="Web.config" />
@@ -67,6 +68,13 @@
     <Content Include="wf_Schedule.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="wf_HenkouTodoke.aspx.cs">
+      <DependentUpon>wf_HenkouTodoke.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wf_HenkouTodoke.aspx.designer.cs">
+      <DependentUpon>wf_HenkouTodoke.aspx</DependentUpon>
+    </Compile>
     <Compile Include="wf_KinmuTodoke.aspx.cs">
       <DependentUpon>wf_KinmuTodoke.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

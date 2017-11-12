@@ -23,7 +23,7 @@ namespace KeiroGroup
 
             ControlDatabase clsDatabase = new ControlDatabase(top.GetConnectionString());
             
-            this.la_employee_name.Text = m_code + "月　届出登録　社員名："+ clsDatabase.GetNameFromId(id);
+            //this.la_employee_name.Text = m_code + "月　届出登録　社員名："+ clsDatabase.GetNameFromId(id);
             this.lbl_ThisMonth.Text = m_code + "月";
         }
 
