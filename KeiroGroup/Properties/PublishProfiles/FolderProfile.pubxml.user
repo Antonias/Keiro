@@ -10,10 +10,10 @@
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/KeiroGroup.dll">
-      <publishTime>10/29/2017 09:15:47</publishTime>
+      <publishTime>11/12/2017 15:43:02</publishTime>
     </File>
     <File Include="bin/KeiroGroup.pdb">
-      <publishTime>10/29/2017 09:15:47</publishTime>
+      <publishTime>11/12/2017 15:43:02</publishTime>
     </File>
     <File Include="top.aspx">
       <publishTime>09/29/2017 21:12:33</publishTime>
@@ -24,6 +24,9 @@
     <File Include="wf_EventDetail.aspx">
       <publishTime>10/03/2017 21:03:32</publishTime>
     </File>
+    <File Include="wf_HenkouTodoke.aspx">
+      <publishTime>11/05/2017 17:52:37</publishTime>
+    </File>
     <File Include="wf_kinmulist.aspx">
       <publishTime>10/15/2017 15:23:02</publishTime>
     </File>
@@ -31,7 +34,7 @@
       <publishTime>10/29/2017 09:13:49</publishTime>
     </File>
     <File Include="wf_KintaiTodoke.aspx">
-      <publishTime>10/29/2017 07:46:53</publishTime>
+      <publishTime>11/12/2017 15:17:39</publishTime>
     </File>
     <File Include="wf_Schedule.aspx">
       <publishTime>10/02/2017 20:44:42</publishTime>
