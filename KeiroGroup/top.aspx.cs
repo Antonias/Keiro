@@ -14,19 +14,19 @@ namespace KeiroGroup
 
         {
 
-            /*            
+            
             return @"Data Source=TANAATU-PC\SQLEXPRESS;"
                     + @"Integrated Security=False;"
                     + @"User ID=sa;"
                     + @"Password=yuto";
-            */
+            
 
-
+            /*
             return @"Data Source=YUTO06;"
                     + @"Integrated Security=False;"
                     + @"User ID=sa;"
                     + @"Password=yuto";
-
+                    */
 
 
         }
