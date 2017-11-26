@@ -170,7 +170,7 @@ namespace KeiroGroup
                 }
                 else
                 {                    
-                    hl_ev.Text = "データなし";                              
+                    hl_ev.Text = "--";                              
                 }
                 
                 hl_ev.Target = "_blank";
