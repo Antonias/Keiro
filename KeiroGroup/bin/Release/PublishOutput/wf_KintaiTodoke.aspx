@@ -31,6 +31,7 @@
         <asp:Label ID="La_Kekkin" runat="server" Font-Underline="True" Text="欠勤届" Visible="False"></asp:Label>
         <br />
         <asp:Label ID="La_KekkinInfo" runat="server" BorderStyle="Groove" Text="Label" Visible="False"></asp:Label>
+        <asp:Label ID="la_Yukyu" runat="server" Font-Bold="True" ForeColor="Red" Text="有給" Visible="False"></asp:Label>
         <br />
         <asp:Label ID="La_Zangyou" runat="server" Font-Underline="True" Text="残業届" Visible="False"></asp:Label>
         <br />
@@ -51,6 +52,7 @@
             　　　<br /> 　　
             <br />
             　　①<asp:Button ID="Btn_InputKekkinInfo" runat="server" Text="欠勤" OnClick="Btn_InputKekkinInfo_Click" />
+            <asp:CheckBox ID="cb_Yukyu" runat="server" Text="有給届" />
             <br />
             <br />
             　　②<asp:TextBox ID="Tb_AdjustHour" runat="server" Width="34px"></asp:TextBox>
