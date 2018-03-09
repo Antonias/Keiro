@@ -415,7 +415,7 @@ namespace KeiroGroup.Kintai
             command.Connection = connection;
             command.CommandText = "select w.employee_id , w.work_dt , w.tikoku_time , w.tikoku_reason, " +
                             "w.soutai_time , w.soutai_reason , w.zangyou_time , kekkin_flg, w.zangyou_reason ," +
-                            "w.start_time_henkou , w.end_time_henkou , w.henkou_reason , w.kekkin_reason " +
+                            "w.start_time_henkou , w.end_time_henkou , w.henkou_reason , w.kekkin_reason, w.yukyu_flg " +
                             "from[KeiroGroup].[dbo].[T_WorkTime] w " +
                             "inner join[KeiroGroup].[dbo].[TM_Employee] e on w.employee_id = e.employee_id " +
                             "where (w.tikoku_time is not null or w.soutai_time is not null " + 
@@ -490,7 +490,15 @@ namespace KeiroGroup.Kintai
                 {
                     DataRow dr = dt.NewRow();
                     dr["届出日"] = reader.GetValue(reader.GetOrdinal("work_dt"));
-                    dr["届出種類"] = "欠勤";
+                    if (reader.GetValue(reader.GetOrdinal("yukyu_flg")).ToString() == "True")
+                    {
+                        dr["届出種類"] = "欠勤(有給)";
+                    }
+                    else
+                    {
+                        dr["届出種類"] = "欠勤";
+                    }
+                        
                     dr["届出時間"] = "";
                     dr["届出理由"] = reader.GetValue(reader.GetOrdinal("kekkin_reason"));
 

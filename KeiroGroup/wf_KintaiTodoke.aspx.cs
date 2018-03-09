@@ -120,6 +120,15 @@ namespace KeiroGroup
                 this.La_Kekkin.Visible = true;
                 this.La_KekkinInfo.Visible = true;
                 this.La_KekkinInfo.Text = "届出有  " + "理由:" + reader.GetValue(reader.GetOrdinal("kekkin_reason")).ToString();
+
+                if (reader.GetValue(reader.GetOrdinal("yukyu_flg")).ToString() == "True")
+                {
+                    this.la_Yukyu.Visible = true;
+                }
+                else
+                {
+                    this.la_Yukyu.Visible = false;
+                }
             }
             else
             {
@@ -222,6 +231,14 @@ namespace KeiroGroup
             string KekkinReason = this.Tb_HenkouRiyuu.Text;
 
             SqlString = "update [KeiroGroup].[dbo].[T_WorkTime] set kekkin_flg = 1 ";
+            if (this.cb_Yukyu.Checked == true) { 
+                SqlString = SqlString + ", yukyu_flg = 1";
+            }
+            else
+            {
+                SqlString = SqlString + ", yukyu_flg = NULL";
+            }
+
             SqlString = SqlString + ", kekkin_reason = '" + KekkinReason + "'";
             SqlString = SqlString + " where employee_id = " + employee_id + " and work_dt ='" + work_date + "'";
 
@@ -241,7 +258,7 @@ namespace KeiroGroup
             SqlString = SqlString + "zangyou_time = NULL, zangyou_reason = NULL,";
             SqlString = SqlString + "tikoku_time = NULL , tikoku_reason = NULL,";
             SqlString = SqlString + "soutai_time = NULL , soutai_reason = NULL,";
-            SqlString = SqlString + "kekkin_flg = NULL, kekkin_reason = NULL,";
+            SqlString = SqlString + "kekkin_flg = NULL, kekkin_reason = NULL,yukyu_flg = NULL,";
             SqlString = SqlString + "start_time_henkou = NULL, end_time_henkou = NULL, henkou_reason = NULL";
             SqlString = SqlString + " where employee_id = " + employee_id + " and work_dt ='" + work_date + "'";
 

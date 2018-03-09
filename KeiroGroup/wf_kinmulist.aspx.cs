@@ -219,7 +219,7 @@ namespace KeiroGroup
             while (td != ed)
             {
                 TableCell tc = new TableCell();
-                tc.Text = td.Day.ToString();                
+                tc.Text = td.Day.ToString() + Environment.NewLine + "(" +  td.ToString("ddd") + ")";                
                 tr.Cells.Add(tc);
                 
 

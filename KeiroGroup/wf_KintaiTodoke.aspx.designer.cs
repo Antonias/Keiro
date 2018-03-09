@@ -121,6 +121,15 @@ namespace KeiroGroup {
         protected global::System.Web.UI.WebControls.Label La_KekkinInfo;
         
         /// <summary>
+        /// la_Yukyu コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label la_Yukyu;
+        
+        /// <summary>
         /// La_Zangyou コントロール。
         /// </summary>
         /// <remarks>
@@ -173,6 +182,15 @@ namespace KeiroGroup {
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Btn_InputKekkinInfo;
+        
+        /// <summary>
+        /// cb_Yukyu コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_Yukyu;
         
         /// <summary>
         /// Tb_AdjustHour コントロール。
