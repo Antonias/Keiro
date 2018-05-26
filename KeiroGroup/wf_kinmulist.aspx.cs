@@ -87,6 +87,8 @@ namespace KeiroGroup
             }
 
             connection.Close();
+
+            AddLinkToEmployeeSchedule(tb_TargetYear.Text.ToString() , ddl_TargetMonth.Text.ToString());
         }
         
         private void addRowToList(string name, string id)
@@ -227,6 +229,16 @@ namespace KeiroGroup
                 i++;
             }
 
+        }
+
+        private void AddLinkToEmployeeSchedule(string y_code , string m_code)
+        {
+            HyperLink hl = new HyperLink();
+            hl.Text = y_code + "年" + m_code + "月予定";
+            hl.Target = "_blank";
+            hl.NavigateUrl = "~/EventCalendar.aspx?year=" + y_code + "&month=" + m_code;
+
+            this.HL_EmployeeSchedule.Controls.Add(hl);
         }
 
         //集計開始日

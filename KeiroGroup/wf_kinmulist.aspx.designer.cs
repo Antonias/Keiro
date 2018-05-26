@@ -58,6 +58,15 @@ namespace KeiroGroup {
         protected global::System.Web.UI.WebControls.DropDownList ddl_TargetMonth;
         
         /// <summary>
+        /// HL_EmployeeSchedule コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HL_EmployeeSchedule;
+        
+        /// <summary>
         /// tbl_KinmuList コントロール。
         /// </summary>
         /// <remarks>

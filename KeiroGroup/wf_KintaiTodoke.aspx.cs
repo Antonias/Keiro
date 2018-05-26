@@ -56,8 +56,7 @@ namespace KeiroGroup
                 dt.Rows.Add(dr);
 
                 writeKintaiTodoke(reader);
-
-
+                
             }
 
             this.gv_TodokedeDetail.DataSource = dt;
@@ -65,6 +64,7 @@ namespace KeiroGroup
 
             this.La_SinseiDay.Text = "申請日：" + work_date.Year.ToString() + "/" + work_date.Month.ToString() + "/" + work_date.Day.ToString();
 
+            writeSchedule();
 
             connection.Close();
         }
@@ -149,6 +149,40 @@ namespace KeiroGroup
                 this.La_ZangyouInfo.Text = "時間:" + reader.GetValue(reader.GetOrdinal("zangyou_time")).ToString();
                 this.La_ZangyouInfo.Text = this.La_ZangyouInfo.Text + "  理由:" + reader.GetValue(reader.GetOrdinal("zangyou_reason")).ToString();
             }
+
+            
+
+        }
+
+        private void writeSchedule()
+        {
+            string sql_str = "select kensyu_name , start_time_kensyu , end_time_kensyu ";
+            sql_str = sql_str + "from[KeiroGroup].[dbo].[T_EmployeeSchedule] ";
+            sql_str = sql_str + "where employee_id = " + employee_id;
+            sql_str = sql_str + "and day = '" + work_date + "'";
+
+            clsDataBase clsdb = new clsDataBase(KeiroGroup.top.GetConnectionString());
+            SqlDataReader reader = clsdb.GetReader(sql_str);
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("研修名");
+            dt.Columns.Add("開始時間");
+            dt.Columns.Add("終了時間");
+
+            while(reader.Read())
+            {
+                DataRow dr = dt.NewRow();
+                dr["研修名"] = reader.GetValue(reader.GetOrdinal("kensyu_name"));
+                dr["開始時間"] = reader.GetValue(reader.GetOrdinal("start_time_kensyu"));
+                dr["終了時間"] = reader.GetValue(reader.GetOrdinal("end_time_kensyu"));
+
+                dt.Rows.Add(dr);
+            }
+
+            this.GV_ScheduleInfo.DataSource = dt;
+            this.GV_ScheduleInfo.DataBind();
+
+            clsdb.closedb();
         }
 
         protected void Btn_InputTikokuInfo_Click(object sender, EventArgs e)
@@ -267,6 +301,52 @@ namespace KeiroGroup
             int i = clsConDb.ExecuteSQL(SqlString);
             Response.Redirect(Request.Url.OriginalString);
 
+
+            clsConDb.closedb();
+        }
+
+        protected void Btn_ResetKensyuInfo_Click(object sender, EventArgs e)
+        {
+            string SqlString;
+
+            SqlString = "delete from [KeiroGroup].[dbo].[T_EmployeeSchedule] ";        
+            SqlString = SqlString + " where employee_id = " + employee_id + " and day ='" + work_date + "'";
+
+            ControlDatabase clsConDb = new ControlDatabase(top.GetConnectionString());
+
+            int i = clsConDb.ExecuteSQL(SqlString);
+            Response.Redirect(Request.Url.OriginalString);
+
+
+            clsConDb.closedb();
+        }
+
+        protected void Btn_InputKensyuInfo_Click(object sender, EventArgs e)
+        {
+            string SqlString;
+            string start_time = this.Tb_KensyuStartHour.Text + ":" + this.Tb_KensyuStartMinute.Text + ":00";
+            string end_time = this.Tb_KensyuEndHour.Text + ":" + this.Tb_KensyuEndMinute.Text + ":00";
+            string KensyuName = this.Tb_KensyuName.Text;
+
+            SqlString = "Insert into [KeiroGroup].[dbo].[T_EmployeeSchedule] (employee_id , day, start_time_kensyu, ";
+            SqlString = SqlString + "end_time_kensyu, kensyu_name , kanzan_flg) ";
+            SqlString = SqlString + "values(" + employee_id + ",'" + work_date + "'," + "'" + start_time + "',";
+            SqlString = SqlString + "'" + end_time + "'," + "'" + KensyuName + "',"; 
+
+            if (this.cb_KensyuKanzan.Checked == true)
+            {
+                SqlString = SqlString + "1)";
+            }
+            else
+            {
+                SqlString = SqlString + "0)";
+            }
+
+          
+            ControlDatabase clsConDb = new ControlDatabase(top.GetConnectionString());
+
+            int i = clsConDb.ExecuteSQL(SqlString);
+            Response.Redirect(Request.Url.OriginalString);
 
             clsConDb.closedb();
         }

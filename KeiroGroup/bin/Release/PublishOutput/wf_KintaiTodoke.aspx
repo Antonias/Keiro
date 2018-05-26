@@ -6,14 +6,16 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-</head>
-<body style="height: 741px">
+    </head>
+<body style="height: 1051px">
     <form id="form1" runat="server">
         社員名：<asp:Label ID="lbl_worker_name" runat="server" Text="Label"></asp:Label>
         <asp:GridView ID="gv_TodokedeDetail" runat="server">
         </asp:GridView>
         <br />
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Larger" Font-Underline="True" Text="届出一欄"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Btn_ResetKintaiTodoke" runat="server" Text="削除" Height="23px" OnClick="Btn_ResetKintaiTodoke_Click" style="margin-top: 2px" Width="53px" />
         <br />
         <br />
         <asp:Label ID="La_Tikoku" runat="server" Font-Underline="True" Text="遅刻届" Visible="False"></asp:Label>
@@ -37,20 +39,22 @@
         <br />
         <asp:Label ID="La_ZangyouInfo" runat="server" BorderStyle="Groove" Text="Label" Visible="False"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Btn_ResetKintaiTodoke" runat="server" Text="削除" Height="23px" OnClick="Btn_ResetKintaiTodoke_Click" style="margin-top: 2px" Width="53px" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+        <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Larger" Font-Underline="True" Text="研修一欄"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Btn_ResetKensyuInfo" runat="server" OnClick="Btn_ResetKensyuInfo_Click" Text="削除" />
+        <br />
+        <asp:GridView ID="GV_ScheduleInfo" runat="server" Height="16px" Width="351px">
+        </asp:GridView>
         <br />
         <br />
-        <asp:Panel ID="Panel1" runat="server" BackColor="#FF6600" BorderColor="Black" BorderStyle="Double" style="margin-right: 0px" Width="603px">
-            　　　　　　　　　　　　　　　　　　　&nbsp;&nbsp; 届出入力<br /> 
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            &nbsp;&nbsp;
+        <br />
             <asp:Label ID="La_SinseiDay" runat="server" Text="申請日："></asp:Label>
-            <br />
-            　　　<br /> 　　
-            <br />
+        <br />
+        <br />
+        <asp:Panel ID="Panel1" runat="server" BackColor="#FF6600" BorderColor="Black" BorderStyle="Double" style="margin-right: 0px" Width="603px" Height="209px">
+            　　　　　　　　　　　　　　　　　　　&nbsp;&nbsp; 届出入力<br /> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
             　　①<asp:Button ID="Btn_InputKekkinInfo" runat="server" Text="欠勤" OnClick="Btn_InputKekkinInfo_Click" />
             <asp:CheckBox ID="cb_Yukyu" runat="server" Text="有給届" />
             <br />
@@ -75,12 +79,29 @@
             <br />
 &nbsp;
             <br />
-            &nbsp;&nbsp; 理由<br /> &nbsp; &nbsp;<asp:TextBox ID="Tb_HenkouRiyuu" runat="server" Width="508px"></asp:TextBox>
+            &nbsp;&nbsp; 理由<br /> &nbsp; &nbsp;<asp:TextBox ID="Tb_HenkouRiyuu" runat="server" Width="508px" Height="16px"></asp:TextBox>
             &nbsp;
 
             <br />
         </asp:Panel>
         <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        <asp:Panel ID="Panel2" runat="server" BackColor="#999999" BorderColor="#666666" Height="152px" Width="605px">
+            　　　　　　　　　　　　　　　　　　　　　研修入力<br /> 
+            <br />
+            研修時間<br /> 
+            <asp:TextBox ID="Tb_KensyuStartHour" runat="server" Width="34px"></asp:TextBox>
+            時<asp:TextBox ID="Tb_KensyuStartMinute" runat="server" Width="34px"></asp:TextBox>
+            分　　～　　<asp:TextBox ID="Tb_KensyuEndHour" runat="server" Width="34px"></asp:TextBox>
+            時<asp:TextBox ID="Tb_KensyuEndMinute" runat="server" Width="34px"></asp:TextBox>
+            分　　　　<asp:CheckBox ID="cb_KensyuKanzan" runat="server" Text="換算反映" />
+            <br />
+            <br />
+            研修名<br /> 
+            <asp:TextBox ID="Tb_KensyuName" runat="server" Height="16px" Width="448px"></asp:TextBox>
+            　　　<asp:Button ID="Btn_InputKensyuInfo" runat="server" OnClick="Btn_InputKensyuInfo_Click" Text="研修登録" />
+        </asp:Panel>
         <br />
         <br />
         <br />

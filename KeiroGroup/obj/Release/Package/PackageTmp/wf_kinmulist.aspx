@@ -32,7 +32,11 @@
                 <asp:ListItem>11</asp:ListItem>
                 <asp:ListItem>12</asp:ListItem>
             </asp:DropDownList>
-            月<br />
+            月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <br />
+            <br />
+            <asp:HyperLink ID="HL_EmployeeSchedule" runat="server">従業員予定</asp:HyperLink>
+            <br />
         </div>
         <asp:Table ID="tbl_KinmuList" runat="server" BackColor="White" BorderColor="#000066" BorderStyle="Double" GridLines="Both">
         </asp:Table>

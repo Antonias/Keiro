@@ -49,6 +49,15 @@ namespace KeiroGroup {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// Btn_ResetKintaiTodoke コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_ResetKintaiTodoke;
+        
+        /// <summary>
         /// La_Tikoku コントロール。
         /// </summary>
         /// <remarks>
@@ -148,22 +157,31 @@ namespace KeiroGroup {
         protected global::System.Web.UI.WebControls.Label La_ZangyouInfo;
         
         /// <summary>
-        /// Btn_ResetKintaiTodoke コントロール。
+        /// Label2 コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_ResetKintaiTodoke;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Panel1 コントロール。
+        /// Btn_ResetKensyuInfo コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Button Btn_ResetKensyuInfo;
+        
+        /// <summary>
+        /// GV_ScheduleInfo コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GV_ScheduleInfo;
         
         /// <summary>
         /// La_SinseiDay コントロール。
@@ -173,6 +191,15 @@ namespace KeiroGroup {
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label La_SinseiDay;
+        
+        /// <summary>
+        /// Panel1 コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
         /// Btn_InputKekkinInfo コントロール。
@@ -317,5 +344,77 @@ namespace KeiroGroup {
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Tb_HenkouRiyuu;
+        
+        /// <summary>
+        /// Panel2 コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel2;
+        
+        /// <summary>
+        /// Tb_KensyuStartHour コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Tb_KensyuStartHour;
+        
+        /// <summary>
+        /// Tb_KensyuStartMinute コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Tb_KensyuStartMinute;
+        
+        /// <summary>
+        /// Tb_KensyuEndHour コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Tb_KensyuEndHour;
+        
+        /// <summary>
+        /// Tb_KensyuEndMinute コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Tb_KensyuEndMinute;
+        
+        /// <summary>
+        /// cb_KensyuKanzan コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_KensyuKanzan;
+        
+        /// <summary>
+        /// Tb_KensyuName コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Tb_KensyuName;
+        
+        /// <summary>
+        /// Btn_InputKensyuInfo コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_InputKensyuInfo;
     }
 }
