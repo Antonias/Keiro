@@ -6,41 +6,41 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\tanaatu\Documents\Keiro\KeiroGroup\bin\Release\PublishOutput</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\owner\Documents\antonias\KeiroGroup\bin\Release\PublishOutput</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/KeiroGroup.dll">
-      <publishTime>05/06/2018 17:39:02</publishTime>
+      <publishTime>09/23/2018 08:38:59</publishTime>
     </File>
     <File Include="bin/KeiroGroup.pdb">
-      <publishTime>05/06/2018 17:39:02</publishTime>
+      <publishTime>09/23/2018 08:38:59</publishTime>
     </File>
     <File Include="EventCalendar.aspx">
-      <publishTime>05/06/2018 17:32:17</publishTime>
+      <publishTime>08/01/2018 20:43:20</publishTime>
     </File>
     <File Include="top.aspx">
-      <publishTime>09/29/2017 21:12:33</publishTime>
+      <publishTime>08/01/2018 20:43:20</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/29/2017 09:16:04</publishTime>
+      <publishTime>08/05/2018 16:43:28</publishTime>
     </File>
     <File Include="wf_EventDetail.aspx">
-      <publishTime>10/03/2017 21:03:32</publishTime>
+      <publishTime>08/01/2018 20:43:20</publishTime>
     </File>
     <File Include="wf_HenkouTodoke.aspx">
-      <publishTime>11/05/2017 17:52:37</publishTime>
+      <publishTime>08/01/2018 20:43:20</publishTime>
     </File>
     <File Include="wf_kinmulist.aspx">
-      <publishTime>05/06/2018 09:28:21</publishTime>
+      <publishTime>09/23/2018 08:16:16</publishTime>
     </File>
     <File Include="wf_KinmuTodoke.aspx">
-      <publishTime>10/29/2017 09:13:49</publishTime>
+      <publishTime>08/01/2018 20:43:20</publishTime>
     </File>
     <File Include="wf_KintaiTodoke.aspx">
-      <publishTime>05/06/2018 09:16:05</publishTime>
+      <publishTime>08/01/2018 20:43:20</publishTime>
     </File>
     <File Include="wf_Schedule.aspx">
-      <publishTime>10/02/2017 20:44:42</publishTime>
+      <publishTime>08/01/2018 20:43:20</publishTime>
     </File>
   </ItemGroup>
 </Project>

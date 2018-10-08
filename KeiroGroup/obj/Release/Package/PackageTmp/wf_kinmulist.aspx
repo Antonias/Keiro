@@ -14,7 +14,10 @@
             職種：<asp:DropDownList ID="dl_KinmuListJa" runat="server">
             </asp:DropDownList>
             <asp:Button ID="bt_ViewKinmuList" runat="server" OnClick="bt_ViewKinmuList_Click" Text="勤務表表示" />
-&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名前： 
+            <asp:TextBox ID="tb_SearchName" runat="server" Width="148px"></asp:TextBox>
+            <asp:Button ID="bt_ViewKinmuListByName" runat="server" OnClick="bt_ViewKinmuListByName_Click" Text="勤務表表示" />
+            <br />
             <br />
             表示月：<asp:TextBox ID="tb_TargetYear" runat="server" Width="50px"></asp:TextBox>
             年<asp:DropDownList ID="ddl_TargetMonth" runat="server">
@@ -48,6 +51,7 @@
         <br />
         黄：勤務変更届出提出済み<br />
         <br />
-        赤：勤務変更届未提出</form>
+        赤：勤務変更届未提出<asp:Button ID="bt_ViewNGNameList" runat="server" OnClick="bt_ViewNGNameList_Click" Text="対象者表示(全職種)" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </form>
 </body>
 </html>

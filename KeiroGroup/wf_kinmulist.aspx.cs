@@ -59,6 +59,38 @@ namespace KeiroGroup
 
         }
 
+
+        protected void bt_ViewKinmuListByName_Click(object sender, EventArgs e)
+        {
+            writeHeaderColumn();
+
+            // 接続文字列の取得
+            var connectionString = KeiroGroup.top.GetConnectionString();
+
+            // データベース接続の準備
+            var connection = new SqlConnection(connectionString);
+
+            // データベースの接続開始
+            connection.Open();
+
+            // 実行するSQLの準備
+            var command = new SqlCommand();
+            command.Connection = connection;
+            command.CommandText = string.Format("select employee_name, employee_id  from [KeiroGroup].[dbo].[TM_Employee] where employee_name like '{0}' and employee_flg = 1 "
+                                                , this.tb_SearchName.Text + "%");
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                addRowToList(reader.GetValue(0).ToString(), reader.GetValue(1).ToString());
+            }
+
+            connection.Close();
+
+            AddLinkToEmployeeSchedule(tb_TargetYear.Text.ToString(), ddl_TargetMonth.Text.ToString());
+        }
+
         protected void bt_ViewKinmuList_Click(object sender, EventArgs e)
         {
             writeHeaderColumn();
@@ -90,7 +122,73 @@ namespace KeiroGroup
 
             AddLinkToEmployeeSchedule(tb_TargetYear.Text.ToString() , ddl_TargetMonth.Text.ToString());
         }
-        
+
+        protected void bt_ViewNGNameList_Click(object sender, EventArgs e)
+        {
+            clsDataBase clsdb = new clsDataBase(top.GetConnectionString());
+
+
+            string base_sql = string.Format("select e.employee_name , w.* from [KeiroGroup].[dbo].[T_WorkTime] w " +
+                                            "inner join[KeiroGroup].[dbo].[TM_Employee] e " +
+                                            "on w.employee_id = e.employee_id " +
+                                            "where w.work_dt between '{0}' and '{1}' " +
+                                            "order by e.employee_id, w.work_dt", StartDate(), EndDate());
+
+            SqlDataReader reader = clsdb.GetReader(base_sql);
+
+            string tmp_name = string.Empty;
+            int tmp_id = 0;
+            TableRow tr = new TableRow();
+            TableCell tc = new TableCell();
+            HyperLink hl_ev = new HyperLink();
+            while (reader.Read())
+            {
+                judgeKinmu clsjdg = new judgeKinmu(reader.GetValue(reader.GetOrdinal("start_time_yotei")).ToString(),
+                                                       reader.GetValue(reader.GetOrdinal("end_time_yotei")).ToString(),
+                                                       reader.GetValue(reader.GetOrdinal("start_time_zisseki")).ToString(),
+                                                       reader.GetValue(reader.GetOrdinal("end_time_zisseki")).ToString(),
+                                                       reader.GetValue(reader.GetOrdinal("start_time_henkou")).ToString(),
+                                                       reader.GetValue(reader.GetOrdinal("end_time_henkou")).ToString(),
+                                                       reader.GetValue(reader.GetOrdinal("tikoku_time")).ToString(),
+                                                       reader.GetValue(reader.GetOrdinal("soutai_time")).ToString(),
+                                                       reader.GetValue(reader.GetOrdinal("zangyou_time")).ToString(),
+                                                       reader.GetValue(reader.GetOrdinal("kekkin_flg")).ToString());
+
+                if (ColorTranslator.ToHtml(clsjdg.getJudgeColor()) == "Red")
+                {
+                    if (tmp_id == 0 || tmp_id != (int)reader.GetValue(reader.GetOrdinal("employee_id")))
+                    {
+                        tmp_name = reader.GetValue(reader.GetOrdinal("employee_name")).ToString().TrimEnd();
+                        tmp_id = (int)reader.GetValue(reader.GetOrdinal("employee_id"));
+                        tr = new TableRow();
+                        tbl_KinmuList.Rows.Add(tr);
+
+                        tc = new TableCell();
+                        tc.Text = tmp_name;
+                        tr.Cells.Add(tc);
+                    }
+
+                    hl_ev = new HyperLink();
+                    hl_ev.Text = DateTime.Parse(reader.GetValue(reader.GetOrdinal("work_dt")).ToString()).Day.ToString();
+                    hl_ev.NavigateUrl = "~/wf_KintaiTodoke.aspx?employee_id=" + reader.GetValue(reader.GetOrdinal("employee_id")).ToString() +
+                                                                            "&work_dt=" + reader.GetValue(reader.GetOrdinal("work_dt")).ToString();
+                    hl_ev.Target = "_blank";
+
+                    tc = new TableCell();
+                    tc.Controls.Add(hl_ev);
+                    tr.Cells.Add(tc);
+                    
+                }
+
+                
+                
+
+            }
+
+
+
+        }
+
         private void addRowToList(string name, string id)
         {
             HyperLink hl_ev = new HyperLink();
@@ -141,7 +239,7 @@ namespace KeiroGroup
                 command.CommandText = command.CommandText + "inner join [KeiroGroup].[dbo].[TM_KinmuTimeMark] km ";
                 command.CommandText = command.CommandText + "ON wt.start_time_yotei = km.start_time and wt.end_time_yotei = km.end_time ";
                 command.CommandText = command.CommandText + "and em.kinmulist_id = km.kinmulist_id ";
-                command.CommandText = command.CommandText + "where work_dt = '" + td +"' and employee_name = '" + name + "'";
+                command.CommandText = command.CommandText + "where work_dt = '" + td +"' and wt.employee_id = " + id + "";
 
                 reader = command.ExecuteReader();
 
@@ -263,6 +361,7 @@ namespace KeiroGroup
             
         }
 
+        
     }
 
     class judgeKinmu

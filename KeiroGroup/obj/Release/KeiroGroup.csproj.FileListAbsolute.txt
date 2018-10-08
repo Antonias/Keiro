@@ -12,3 +12,10 @@ C:\Users\tanaatu\Documents\Keiro\KeiroGroup\obj\Release\KeiroGroup.csprojResolve
 C:\Users\tanaatu\Documents\Keiro\KeiroGroup\obj\Release\KeiroGroup.csproj.CoreCompileInputs.cache
 C:\Users\tanaatu\Documents\Keiro\KeiroGroup\obj\Release\KeiroGroup.dll
 C:\Users\tanaatu\Documents\Keiro\KeiroGroup\obj\Release\KeiroGroup.pdb
+C:\Users\owner\Documents\antonias\KeiroGroup\bin\KeiroGroup.dll.config
+C:\Users\owner\Documents\antonias\KeiroGroup\bin\KeiroGroup.dll
+C:\Users\owner\Documents\antonias\KeiroGroup\bin\KeiroGroup.pdb
+C:\Users\owner\Documents\antonias\KeiroGroup\obj\Release\KeiroGroup.csprojAssemblyReference.cache
+C:\Users\owner\Documents\antonias\KeiroGroup\obj\Release\KeiroGroup.csproj.CoreCompileInputs.cache
+C:\Users\owner\Documents\antonias\KeiroGroup\obj\Release\KeiroGroup.dll
+C:\Users\owner\Documents\antonias\KeiroGroup\obj\Release\KeiroGroup.pdb

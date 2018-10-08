@@ -14,20 +14,19 @@ namespace KeiroGroup
 
         {
 
-            
-            return @"Data Source=TANAATU-PC\SQLEXPRESS;"
+#if Debug 
+            return @"Data Source=MYCOMPUTER;"
                     + @"Integrated Security=False;"
                     + @"User ID=sa;"
                     + @"Password=yuto";
-            
 
-            /*
+
+#else       
             return @"Data Source=YUTO06;"
                     + @"Integrated Security=False;"
                     + @"User ID=sa;"
                     + @"Password=yuto";
-            */      
-            
+#endif            
 
         }
         protected void Page_Load(object sender, EventArgs e)

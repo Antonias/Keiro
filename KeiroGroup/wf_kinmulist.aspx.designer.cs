@@ -40,6 +40,24 @@ namespace KeiroGroup {
         protected global::System.Web.UI.WebControls.Button bt_ViewKinmuList;
         
         /// <summary>
+        /// tb_SearchName コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_SearchName;
+        
+        /// <summary>
+        /// bt_ViewKinmuListByName コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bt_ViewKinmuListByName;
+        
+        /// <summary>
         /// tb_TargetYear コントロール。
         /// </summary>
         /// <remarks>
@@ -74,5 +92,14 @@ namespace KeiroGroup {
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tbl_KinmuList;
+        
+        /// <summary>
+        /// bt_ViewNGNameList コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bt_ViewNGNameList;
     }
 }
