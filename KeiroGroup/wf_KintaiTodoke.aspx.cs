@@ -350,5 +350,23 @@ namespace KeiroGroup
 
             clsConDb.closedb();
         }
+
+        protected void Btn_InputYoteiInfo_Click(object sender, EventArgs e)
+        {
+            string SqlString;
+            string start_time = this.Tb_AfterStartHourYotei.Text + ":" + this.Tb_AfterStartMinuteYotei.Text + ":00";
+            string end_time = this.Tb_AfterEndHourYotei.Text + ":" + this.Tb_AfterEndMinuteYotei.Text + ":00";
+            
+            SqlString = "update [KeiroGroup].[dbo].[T_WorkTime] set start_time_yotei = '" + start_time + "'";
+            SqlString = SqlString + ", end_time_yotei = '" + end_time + "'";            
+            SqlString = SqlString + "where employee_id = " + employee_id + " and work_dt ='" + work_date + "'";
+
+            ControlDatabase clsConDb = new ControlDatabase(top.GetConnectionString());
+
+            int i = clsConDb.ExecuteSQL(SqlString);
+            Response.Redirect(Request.Url.OriginalString);
+
+            clsConDb.closedb();
+        }
     }
 }

@@ -22,7 +22,8 @@ namespace KeiroGroup.Kintai
             m_code = int.Parse(Request.QueryString["month"]);
             id = int.Parse(Request.QueryString["employee_id"].ToString());
 
-            InitKinmuList("start_time_zisseki", "end_time_zisseki");
+            string name = "社員名:=" + clsCommon.GetNameFromId(id) + "(id=" + id.ToString() + ")";           
+            InitKinmuList("start_time_zisseki", "end_time_zisseki", name);
 
             WriteTodokeInfo();
 
@@ -77,9 +78,11 @@ namespace KeiroGroup.Kintai
             ClsDatabase.closedb();
         }
 
-        private void InitKinmuList(string st_code, string ed_code)
+        //要修正箇所
+        private void InitKinmuList(string st_code, string ed_code, string name)
         {
             writeHeaderColumn();
+            la_employee_name.Text = name;
 
             // 接続文字列の取得
             var connectionString = KeiroGroup.top.GetConnectionString();

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     </head>
-<body style="height: 1051px">
+<body style="height: 1084px">
     <form id="form1" runat="server">
         社員名：<asp:Label ID="lbl_worker_name" runat="server" Text="Label"></asp:Label>
         <asp:GridView ID="gv_TodokedeDetail" runat="server">
@@ -103,7 +103,14 @@
             　　　<asp:Button ID="Btn_InputKensyuInfo" runat="server" OnClick="Btn_InputKensyuInfo_Click" Text="研修登録" />
         </asp:Panel>
         <br />
-        <br />
+        勤務予定変更(非推奨)<br />
+        <asp:TextBox ID="Tb_AfterStartHourYotei" runat="server" Width="34px"></asp:TextBox>
+            <asp:Label ID="La_AdjustTime2" runat="server" Text="時間"></asp:Label>
+        <asp:TextBox ID="Tb_AfterStartMinuteYotei" runat="server" Width="34px"></asp:TextBox>
+            分　<asp:Label ID="La_ChangeTime0" runat="server" Text="～"></asp:Label>
+            <asp:TextBox ID="Tb_AfterEndHourYotei" runat="server" Width="32px"></asp:TextBox>
+            時間<asp:TextBox ID="Tb_AfterEndMinuteYotei" runat="server" Width="34px"></asp:TextBox>
+            分に<asp:Button ID="Btn_InputYoteiInfo" runat="server" Height="23px" OnClick="Btn_InputYoteiInfo_Click" style="margin-top: 2px" Text="変更" Width="53px" />
         <br />
         <br />
         <br />

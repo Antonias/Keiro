@@ -35,6 +35,25 @@ namespace KeiroGroup
         }
     }
 
+    public class clsCommon
+    {
+        public static string GetNameFromId(int id)
+        {
+            string name = string.Empty;
+            clsDataBase clsdb = new clsDataBase(top.GetConnectionString());
+            SqlDataReader reader = clsdb.GetReader(string.Format(
+            "select employee_name from [KeiroGroup].[dbo].[TM_Employee] where employee_id = {0}",id));
+            while (reader.Read())
+            {
+                name = reader.GetValue(0).ToString();
+            }
+
+            clsdb.closedb();
+            return name;
+        }
+
+    }
+
     public class ControlDatabase
     {
         string connectionString;

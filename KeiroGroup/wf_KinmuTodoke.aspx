@@ -11,6 +11,7 @@
     <form id="form1" runat="server">
         <div>
             <br />
+            <asp:Label ID="la_employee_name" runat="server" BorderStyle="Solid" Text="Label"></asp:Label>
             <br />
             <br />
             <asp:Table ID="tbl_KinmuList" runat="server" GridLines="Both">

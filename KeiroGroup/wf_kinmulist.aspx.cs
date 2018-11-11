@@ -228,7 +228,7 @@ namespace KeiroGroup
             tc.Controls.Add(hl_ev);
             tr.Cells.Add(tc);
 
-            while (td != ed)
+            while (td != ed.AddDays(1))
             {
                 
                 SqlDataReader reader;
@@ -316,7 +316,7 @@ namespace KeiroGroup
             tcs.Text = "勤務表";
             tr.Cells.Add(tcs);
 
-            while (td != ed)
+            while (td != ed.AddDays(1))
             {
                 TableCell tc = new TableCell();
                 tc.Text = td.Day.ToString() + Environment.NewLine + "(" +  td.ToString("ddd") + ")";                
@@ -357,7 +357,7 @@ namespace KeiroGroup
             string month_no = ddl_TargetMonth.Text.ToString();
 
             DateTime tmp_dt = new DateTime(int.Parse(year_no), int.Parse(month_no), 1);
-            return tmp_dt.AddMonths(1);
+            return tmp_dt.AddMonths(1).AddDays(-1);
             
         }
 

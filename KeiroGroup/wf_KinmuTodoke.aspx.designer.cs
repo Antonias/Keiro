@@ -22,6 +22,15 @@ namespace KeiroGroup.Kintai {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// la_employee_name コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label la_employee_name;
+        
+        /// <summary>
         /// tbl_KinmuList コントロール。
         /// </summary>
         /// <remarks>
