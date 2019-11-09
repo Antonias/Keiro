@@ -22,7 +22,7 @@ namespace KeiroGroup
 
 
 #else       
-            return @"Data Source=YUTO06;"
+            return @"Data Source=YUTO30;"
                     + @"Integrated Security=False;"
                     + @"User ID=sa;"
                     + @"Password=yuto";
